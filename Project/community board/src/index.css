@@ -1,0 +1,9 @@
+.header {
+    top: -200px;
+}
+
+#top-header-text {
+    color: red;
+    font-size: 60px;
+    text-shadow: 2px 2px #9e8b8b;
+}

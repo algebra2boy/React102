@@ -1,0 +1,19 @@
+.Card {
+    color: #000;
+    width: fit-content;
+    background-color: #fff;
+    padding-bottom: 20px;
+    box-shadow: 0 15px 25px #817c7c33;
+    font-size: medium;
+    border-radius: 14px;
+    backdrop-filter: blur(2px);
+    text-align: center;
+    margin-bottom: 30px;
+    height: 450px;
+}
+
+.Card img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+}

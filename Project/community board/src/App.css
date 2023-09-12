@@ -1,0 +1,17 @@
+#root {
+  margin: 0;
+  text-align: center;
+}
+
+.App {
+  margin-left: 60px;
+  margin-right: 60px;
+  color: #000;
+}
+
+.Container {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-between;
+}
