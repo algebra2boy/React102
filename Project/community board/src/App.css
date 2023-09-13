@@ -4,14 +4,28 @@
 }
 
 .App {
-  margin-left: 60px;
-  margin-right: 60px;
+  margin-left: 80px;
+  margin-right: 80px;
   color: #000;
 }
 
 .Container {
+  /* add flex box to container */
   display: flex;
   flex-flow: row wrap;
   align-items: center;
   justify-content: space-between;
+}
+
+button {
+  /* border-radius: 10px; */
+  text-decoration: none;
+  text-align: center;
+  color: black;
+  display: inline-block;
+  /* font-size: 16px; */
+}
+
+a :hover {
+  background-color: #FFB000;
 }

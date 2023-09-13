@@ -1,12 +1,12 @@
 import React from "react";
 
-const Card = () => {
+const Card = (props) => {
     return (
         <div className="Card">
-            <img className="club" src="https://imageio.forbes.com/specials-images/dam/imageserve/966248982/960x0.jpg?height=456&width=711&fit=bounds" alt="club_picture" />
-            <h3>Machine Learning Club</h3>
-            <h4>Python</h4>
-            <a href="https://umass.acm.org/sigs/Machine-Learning">
+            <img className="club" src={props.img} alt="club_picture" />
+            <h3>{props.title}</h3>
+            <h4>{props.subtitle}</h4>
+            <a href={props.link}>
                 <button>
                     View Club
                 </button>
