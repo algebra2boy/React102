@@ -2,7 +2,7 @@
 
 Submitted by: **Yongye Tan**
 
-This web app: **Computer Science Community Board**
+This web app: **Computer Science Amherst Club Board **
 
 Time spent: **X** hours spent in total
 
@@ -20,26 +20,19 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
-- [ ] List anything else that you added to improve the site's functionality!
+- [x] List anything else that you added to improve the site's functionality!
+    - hovering the text would alter the background color
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented required features:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-
-<!-- Replace this with whatever GIF tool you used! -->
-
-GIF created with ...
-
-<!-- Recommended tools:
-[Kap](https://getkap.co/) for macOS
-[ScreenToGif](https://www.screentogif.com/) for Windows
-[peek](https://github.com/phw/peek) for Linux. -->
+<img src='https://imgur.com/a/hBSuiuC.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+The challenges that I encountered while building the app were CSS and making the card component to fit in a container row by row.
+I did not know how to do it until I refreshed some of my knowledge on flex box.
 
 
 ## License
