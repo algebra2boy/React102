@@ -27,7 +27,10 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented required features:
 
-<img src='https://imgur.com/a/hBSuiuC.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+https://github.com/algebra2boy/React102/assets/103079472/f40a5111-0489-4086-ae63-7b9a030929d4
+
+
 
 ## Notes
 
