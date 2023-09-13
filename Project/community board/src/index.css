@@ -7,3 +7,15 @@
     font-size: 60px;
     text-shadow: 2px 2px #9e8b8b;
 }
+
+h3 {
+    text-align: center;
+}
+
+h3:hover {
+    background-color: aquamarine;
+}
+
+h4:hover {
+    background-color: aquamarine;
+}
