@@ -68,13 +68,14 @@ h2 {
   transform: perspective(2000px) rotateX(var(--rotate-X, 0));
   /* the time to  elapse the card, it is beter to set it smaller to make it quick*/
   transition: 0.3s;
-
+  position: relative;
   transform-style: preserve-3d;
 }
 
 .card .front .card .back {
   position: absolute;
   justify-content: center;
+  text-align: center;
   backface-visibility: hidden;
 }
 
@@ -84,6 +85,19 @@ h2 {
   --rotate-X: 180deg
 }
 
+.card .front {
+  opacity: 1;
+}
+
 .card .back {
-  transform: rotateX(180deg);
+  opacity: 0;
+}
+
+.card.flipped .back {
+  transform: perspective(2000px) rotateX(var(--rotate-X, 0));
+  opacity: 1;
+}
+
+.card.flipped .front {
+  opacity: 0;
 }

@@ -10,14 +10,16 @@ const Card = () => {
 
     return (
         <div className={toggledCard ? "card flipped" : "card"} onClick={handleToggle}>
-            <div className="front">
-                <h3>Start!</h3>
-                <br />
-            </div>
+            {!toggledCard ?
+                <div className="front">
+                    <h3>Start the adventure of learning SwiftUI!</h3>
+                    <br />
+                </div> :
 
-            <div className="back">
-                <h3>Press the next arrow to start the flashcards :)</h3>
-            </div>
+                <div className="back">
+                    <h3>Press the next arrow to start the flashcards :)</h3>
+                </div>
+            }
         </div>
     )
 }
