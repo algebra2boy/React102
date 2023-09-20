@@ -1,9 +1,12 @@
-import './App.css'
+import './App.css';
+import Header from './components/Header';
+import Card from './components/Card';
 
 const App = () => {
   return (
     <div className="App">
-      <h1>HELLO</h1>
+      <Header />
+      <Card />
     </div>
   )
 }

@@ -11,9 +11,11 @@
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -22,6 +24,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -39,4 +42,48 @@
 
 .read-the-docs {
   color: #888;
+}
+
+h1 {
+  font-size: larger;
+}
+
+h2 {
+  font-size: medium;
+  font-weight: 200px;
+}
+
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 40px;
+  /* important to make the box visible */
+  box-shadow: 0 0 10px 6px #6e6b6b4d;
+  cursor: pointer;
+  height: 300px;
+  /*  perspective is how much momentum / force to swap the card */
+  /* rotatX will look through a variable, var, called --rotate-X from flipped, which I declared below */
+  transform: perspective(2000px) rotateX(var(--rotate-X, 0));
+  /* the time to  elapse the card, it is beter to set it smaller to make it quick*/
+  transition: 0.3s;
+
+  transform-style: preserve-3d;
+}
+
+.card .front .card .back {
+  position: absolute;
+  justify-content: center;
+  backface-visibility: hidden;
+}
+
+/* very important to flip the card */
+/* we know need to flip the card in 180 degree to see the half */
+.flipped {
+  --rotate-X: 180deg
+}
+
+.card .back {
+  transform: rotateX(180deg);
 }

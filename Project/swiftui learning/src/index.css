@@ -67,3 +67,8 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+body {
+  background-color: antiquewhite;
+  background-image: url("https://wallpapers.com/images/hd/study-background-g4ckerc0qf2h8d0u.jpg");
+}
