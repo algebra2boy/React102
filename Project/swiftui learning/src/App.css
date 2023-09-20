@@ -101,3 +101,15 @@ h2 {
 .card.flipped .front {
   opacity: 0;
 }
+
+.easy {
+  background-color: #B0D9B1;
+}
+
+.medium {
+  background-color: #ECEE81;
+}
+
+.hard {
+  background-color: #FF3FA4;
+}
