@@ -96,6 +96,8 @@ h2 {
 .card.flipped .back {
   transform: perspective(2000px) rotateX(var(--rotate-X, 0));
   opacity: 1;
+  color: #F0B86E;
+  font-weight: bold;
 }
 
 .card.flipped .front {
@@ -111,5 +113,5 @@ h2 {
 }
 
 .hard {
-  background-color: #FF3FA4;
+  background-color: #FFBA86;
 }
