@@ -41,7 +41,7 @@ The CSS effect of flipping the card back and forth took up 80% of my time.
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright [2023] [Yongye Tan]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
