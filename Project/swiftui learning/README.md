@@ -1,8 +1,8 @@
-# Web Development Project 2 - *Name of App Here*
+# Web Development Project 2 - SwiftUI Learning
 
-Submitted by: **Your Name Here**
+Submitted by: Yongye Tan
 
-This web app: **insert description**
+This web app: This React app is made to help you learn Swiftui in an interesting way!
 
 Time spent: 3 hours spent in total
 
@@ -29,6 +29,10 @@ The following **additional** features are implemented:
 ## Video Walkthrough
 
 Here's a walkthrough of implemented required features:
+
+
+https://github.com/algebra2boy/React102/assets/103079472/f265d64a-5d22-40a0-abe7-44800b115f9f
+
 
 
 ## Notes
