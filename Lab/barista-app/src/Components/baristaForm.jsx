@@ -28,12 +28,23 @@ const BaristaForm = () => {
         'blended': ['yes', 'turbo', 'no']
     };
 
+    const checkAlert = () => {
+        const keyNames = ["temperature", "milk", "syrup", "blended"];
+        keyNames.forEach(keyName => {
+            if (!ingredients[keyName].includes(inputs[keyName])) {
+                alert("For temperature, that isn't even an option!")
+            }
+        })
+    }
+
     // go through each state vairable we have and check it against the trueRecipe that we got from our drinksJSON
     const onCheckAnswer = () => {
         trueRecipe.temp != inputs['temperature'] ? setCheckedTemperature('wrong') : setCheckedTemperature("correct");
         trueRecipe.syrup != inputs['syrup'] ? setCheckedSyrup('wrong') : setCheckedSyrup("correct");
         trueRecipe.milk != inputs['milk'] ? setCheckedMilk('wrong') : setCheckedMilk("correct");
         trueRecipe.blended != inputs['blended'] ? setCheckedBlended('wrong') : setCheckedBlended("correct");
+
+        checkAlert();
     };
 
     const onNewDrink = () => {
@@ -70,79 +81,84 @@ const BaristaForm = () => {
                     type="new-drink-button"
                     className="button newdrink"
                     onClick={onNewDrink}
-                ></button>
+                >🔄</button>
             </div>
-            <form>
-                <h3>Temperature</h3>
-                <div className="answer-space" id={correct_temp}>
-                    {inputs["temperature"]}
-                </div>
-                <RecipeChoices
-                    handleChange={(e) => setInputs((prevState) => ({
-                        // other state no need to be changed, we are only changing the variables that have been changed
-                        ...prevState,
-                        // e is a HTML element, and the following code [e.target.name] deconstructs the html element 
-                        // e.target retrieves a list of html attributes
-                        // since input has many attributes, we pick name, which is same as the label
-                        //  
-                        [e.target.name]: e.target.value,
-                    }))}
-                    label="temperature"
-                    choices={ingredients["temperature"]}
-                    checked={inputs["temperature"]}
-                />
 
-                <h3>milk</h3>
-                <div className="answer-space" id={correct_milk}>
-                    {inputs["milk"]}
+            <form className="container">
+                <div className="mini-container">
+                    <h3>Temperature</h3>
+                    <div className="answer-space" id={correct_temp}>
+                        {inputs["temperature"]}
+                    </div>
+                    <RecipeChoices
+                        handleChange={(e) => setInputs((prevState) => ({
+                            // other state no need to be changed, we are only changing the variables that have been changed
+                            ...prevState,
+                            // e is a HTML element, and the following code [e.target.name] deconstructs the html element 
+                            // e.target retrieves a list of html attributes
+                            // since input has many attributes, we pick name, which is same as the label
+                            //  
+                            [e.target.name]: e.target.value,
+                        }))}
+                        label="temperature"
+                        choices={ingredients["temperature"]}
+                        checked={inputs["temperature"]}
+                    />
                 </div>
-                <RecipeChoices
-                    handleChange={(e) => setInputs((prevState) => ({
-                        ...prevState,
-                        [e.target.name]: e.target.value,
-                    }))}
-                    label="milk"
-                    choices={ingredients["milk"]}
-                    checked={inputs["milk"]}
-                />
 
-                <h3>syrup</h3>
-                <div className="answer-space" id={correct_syrup}>
-                    {inputs["syrup"]}
+                <div className="mini-container">
+                    <h3>milk</h3>
+                    <div className="answer-space" id={correct_milk}>
+                        {inputs["milk"]}
+                    </div>
+                    <RecipeChoices
+                        handleChange={(e) => setInputs((prevState) => ({
+                            ...prevState,
+                            [e.target.name]: e.target.value,
+                        }))}
+                        label="milk"
+                        choices={ingredients["milk"]}
+                        checked={inputs["milk"]}
+                    />
                 </div>
-                <RecipeChoices
-                    handleChange={(e) => setInputs((prevState) => ({
-                        ...prevState,
-                        [e.target.name]: e.target.value,
-                    }))}
-                    label="syrup"
-                    choices={ingredients["syrup"]}
-                    checked={inputs["syrup"]}
-                />
 
-                <h3>blended</h3>
-                <div className="answer-space" id={correct_blended}>
-                    {inputs["blended"]}
+                <div className="mini-container">
+                    <h3>syrup</h3>
+                    <div className="answer-space" id={correct_syrup}>
+                        {inputs["syrup"]}
+                    </div>
+                    <RecipeChoices
+                        handleChange={(e) => setInputs((prevState) => ({
+                            ...prevState,
+                            [e.target.name]: e.target.value,
+                        }))}
+                        label="syrup"
+                        choices={ingredients["syrup"]}
+                        checked={inputs["syrup"]}
+                    />
                 </div>
-                <RecipeChoices
-                    handleChange={(e) => setInputs((prevState) => ({
-                        ...prevState,
-                        [e.target.name]: e.target.value,
-                    }))}
-                    label="blended"
-                    choices={ingredients["blended"]}
-                    checked={inputs["blended"]}
-                />
 
+                <div className="mini-container">
+                    <h3>blended</h3>
+                    <div className="answer-space" id={correct_blended}>
+                        {inputs["blended"]}
+                    </div>
+                    <RecipeChoices
+                        handleChange={(e) => setInputs((prevState) => ({
+                            ...prevState,
+                            [e.target.name]: e.target.value,
+                        }))}
+                        label="blended"
+                        choices={ingredients["blended"]}
+                        checked={inputs["blended"]}
+                    />
+                </div>
             </form>
 
             <button type="submit" className="button submit" onClick={onCheckAnswer}>
                 Check Answer
             </button>
 
-            <button type="new-drink-button" className="button newdrink" onClick={onNewDrink}>
-                New Drink
-            </button>
         </div>
     )
 };

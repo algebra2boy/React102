@@ -7,7 +7,7 @@ const RecipeChoices = ({ handleChange, label, choices, checked }) => {
             {choices &&
                 choices.map((choice) => (
                     <li key={choice}>
-                        <input
+                        {/* <input
                             id={choice}
                             value={choice}
                             name={label}
@@ -15,7 +15,7 @@ const RecipeChoices = ({ handleChange, label, choices, checked }) => {
                             // since handleChange is a closure so we can notify the parent whenever this ls compoent has been changed
                             onChange={handleChange}
                             checked={checked == choice}
-                        />
+                        /> */}
                         {choice}
                     </li>
                 ))}

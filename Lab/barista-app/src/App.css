@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  font-family: 'Poppins', sans-serif;
 }
 
 .logo {
@@ -11,9 +14,11 @@
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -22,6 +27,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -39,4 +45,87 @@
 
 .read-the-docs {
   color: #888;
+}
+
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  margin: auto;
+  position: relative;
+}
+
+.mini-container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  margin: 25px;
+  padding: 15px;
+  border-radius: 15px;
+  /* very important to make the border to be visible */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.mini-header{
+  height: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: rgb(226, 195, 147);
+  text-align: center;
+  border-radius: 10px;
+  width: 93%;
+  margin: 0;
+}
+
+
+.wrong {
+  background-color: #db5d5d;;
+}
+
+
+.correct {
+  background-color: rgb(61, 176, 100);
+}
+
+li {
+  list-style: none;
+}
+
+li {
+  margin-top:3px;
+  margin-bottom:3px;
+  background-color: #FFFDD0;
+  border-radius: 15px;
+}
+
+.answer-space {
+  background-color: #e2c393;
+  height: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: auto;
+  margin-bottom: 20px;
+  border-radius: 15px;
+  clear: both;
+}
+
+.button {
+  background-color: rgba(138, 98, 12, 0.942);
+  font-weight: bold;
+  color: white;
+}
+
+.title {
+  display: inline-block;
+  margin-bottom: 0;
+}
+
+.title-container {
+  text-align: left;
+  margin-bottom: 50px;
+}
+
+.drink-container {
+  display: flex;
+  justify-content: space-between;
 }
