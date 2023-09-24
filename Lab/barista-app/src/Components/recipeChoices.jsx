@@ -12,6 +12,7 @@ const RecipeChoices = ({ handleChange, label, choices, checked }) => {
                             value={choice}
                             name={label}
                             type="radio"
+                            // since handleChange is a closure so we can notify the parent whenever this ls compoent has been changed
                             onChange={handleChange}
                             checked={checked == choice}
                         />
