@@ -4,7 +4,15 @@ import React from "react";
 const RecipeChoices = ({ handleChange, label, choices, checked }) => {
     return (
         <div className="radio-buttons">
-            {choices &&
+            <input 
+                type="text"
+                name={label}
+                placeholder="Guess the ingredient..."
+                onChange={handleChange}
+                className="textbox"
+            />
+            
+                {choices &&
                 choices.map((choice) => (
                     <li key={choice}>
                         {/* <input

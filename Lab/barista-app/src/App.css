@@ -78,12 +78,12 @@
 }
 
 
-.wrong {
+#wrong {
   background-color: #db5d5d;;
 }
 
 
-.correct {
+#correct {
   background-color: rgb(61, 176, 100);
 }
 
