@@ -1,6 +1,6 @@
 import React from "react"
 
-const GuessContainer = ({ handleChange, handleSubmit, result }) => {
+const GuessContainer = ({ handleChange, handleSubmit, result, value }) => {
     return (
         <form onSubmit={handleSubmit}>
             <div className="guess">
@@ -10,6 +10,7 @@ const GuessContainer = ({ handleChange, handleSubmit, result }) => {
                     name="answer"
                     placeholder="Place your answer here..."
                     className={result}
+                    value={value}
                     onChange={handleChange} />
                 <button
                     type="submit"

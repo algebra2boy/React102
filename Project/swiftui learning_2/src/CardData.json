@@ -8,14 +8,14 @@
     },
     {
       "front": "How do you iterate over the view?",
-      "back": "ForEach!",
+      "back": "forEach",
       "id": 2,
       "url": "https://i.ytimg.com/vi/BwL587jEY00/maxresdefault.jpg",
       "category": "easy"
     },
     {
       "front": "What is the new database to replace CoreData?",
-      "back": "SwiftData!",
+      "back": "SwiftData",
       "id": 3,
       "url": "https://developer.apple.com/assets/elements/icons/swiftdata/swiftdata-96x96_2x.png",
       "category": "hard"

@@ -8,7 +8,9 @@ import cards from "./CardData.json";
 const App = () => {
 
   const [cardNumber, setCardNumber] = useState(0);
+  // user input
   const [answer, setAnswer] = useState("");
+  // to check whether user input is correct or incorrect (either "correct" or "incorrect")
   const [result, setResult] = useState("");
 
   const getToNextCard = () => {
@@ -46,7 +48,11 @@ const App = () => {
       <GuessContainer
         handleChange={(e) => setAnswer(e.target.value)}
         handleSubmit={(e) => handleSubmit(e)}
-        result={result} />
+        result={result} 
+        // value is very important to empty the input field 
+        // two-way binding, parent has the state variable, but child has the prop, which only
+        // has the ready-only property, we have pass value as a prop to notify any newest data
+        value={answer}/>
       <button onClick={getToNextCard}>⭢</button>
     </div>
   )
