@@ -9,6 +9,7 @@ const App = () => {
 
   const [cardNumber, setCardNumber] = useState(0);
   const [answer, setAnswer] = useState("");
+  const [result, setResult] = useState("");
 
   const getToNextCard = () => {
     setCardNumber(prev => {
@@ -20,14 +21,32 @@ const App = () => {
         return prev + 1;
       }
     });
+    setAnswer("");
+    setResult("");
   }
+
+  const handleSubmit = (e) => {
+    // important to disable the form refresh
+    e.preventDefault();
+
+    // validate user's answer
+    const card = cards[cardNumber];
+    if (card.back === answer) {
+      setResult("correct");
+    } else {
+      setResult("incorrect");
+    }
+  };
 
   return (
     <div className="App">
       <Header count={cards.length} />
       <Card card={cards[cardNumber]} />
       {answer}
-      <GuessContainer handleChange={(e) => setAnswer(e.target.value)}/>
+      <GuessContainer
+        handleChange={(e) => setAnswer(e.target.value)}
+        handleSubmit={(e) => handleSubmit(e)}
+        result={result} />
       <button onClick={getToNextCard}>⭢</button>
     </div>
   )
