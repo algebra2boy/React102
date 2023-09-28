@@ -32,7 +32,7 @@ const BaristaForm = () => {
         const keyNames = ["temperature", "milk", "syrup", "blended"];
         keyNames.forEach(keyName => {
             if (!ingredients[keyName].includes(inputs[keyName])) {
-                alert("For temperature, that isn't even an option!")
+                alert(`For ${keyName}, that isn't even an option!`);
             }
         })
     }
