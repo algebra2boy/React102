@@ -3,9 +3,11 @@ import Header from './components/Header';
 import Card from './components/Card';
 import GuessContainer from './components/GuessContainer';
 import { useState } from 'react';
-import cards from "./CardData.json";
+import cardData from "./CardData.json";
 
 const App = () => {
+
+  const [cards, setCards] = useState(cardData);
 
   const [cardNumber, setCardNumber] = useState(0);
 
@@ -34,8 +36,8 @@ const App = () => {
     setResult("");
   }
 
-  const shuffle = () => {
-    cards = shuffle(cards);
+  const shuffleCard = () => {
+    setCards(cards.sort((a,b) => 0.5 - Math.random()));
   }
 
 
@@ -91,7 +93,7 @@ const App = () => {
         </button>
 
         <button
-          onClick={() => { }}>
+          onClick={shuffleCard}>
           🔀 Shuffle
         </button>
 
