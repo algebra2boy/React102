@@ -1,10 +1,10 @@
-# Web Development Project 3 - _Name of App Here_
+# Web Development Project 3 - SwiftUI Learning
 
-Submitted by: **Your Name Here**
+Submitted by: Yongye Tan
 
-This web app: **insert description**
+This web app: This React application is made to help you learn SwiftUI in a fun way!
 
-Time spent: **X** hours spent in total
+Time spent: 3 hours spent in total
 
 ## Required Features
 
@@ -19,7 +19,7 @@ The following **optional** features are implemented:
 
 - [x] A shuffle button is used to randomize the order of the cards
 - [ ] A user's answer may be counted as correct even when it is slightly different from the target answer
-- [ ] A counter displays the user's current and longest streak of correct responses
+- [x] A counter displays the user's current and longest streak of correct responses
 - [ ] A user can mark a card that they have mastered and have it removed from the pool of answers as well as added to a list of mastered cards
 
 The following **additional** features are implemented:
@@ -34,6 +34,8 @@ Here's a walkthrough of implemented user stories:
 ## Notes
 
 Describe any challenges encountered while building the app.
+
+I had difficulty with state managment. There are some state that must be uplifting up. I took a while to understand why we need to pass a function hanlder from parent to child, aka a closure. There are many states that I think I need to optimize them later.
 
 ## License
 
