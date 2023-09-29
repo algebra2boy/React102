@@ -2,7 +2,7 @@ import './App.css';
 import Header from './components/Header';
 import Card from './components/Card';
 import GuessContainer from './components/GuessContainer';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import cardData from "./CardData.json";
 
 const App = () => {
@@ -19,6 +19,14 @@ const App = () => {
 
   // check if the card is toggled or not
   const [toggledCard, setToggledCard] = useState(false); // Moved from Card to App
+
+  // number of current correct
+  const [totalCorrect, setTotalCorrect] = useState(0);
+
+  useEffect(() => {
+    // storing input name
+    localStorage.setItem("streak", JSON.stringify(totalCorrect));
+  }, [totalCorrect]);
 
   const getToNextCard = () => {
     setCardNumber(prev => prev + 1);
@@ -37,9 +45,8 @@ const App = () => {
   }
 
   const shuffleCard = () => {
-    setCards(cards.sort((a,b) => 0.5 - Math.random()));
+    setCards(cards.sort((a, b) => 0.5 - Math.random()));
   }
-
 
   const handleSubmit = (e) => {
     // important to disable the form refresh
@@ -54,6 +61,7 @@ const App = () => {
     const card = cards[cardNumber];
     if (card.back === answer) {
       setResult("correct");
+      setTotalCorrect(prev => prev + 1);
     } else {
       setResult("incorrect");
     }
@@ -62,7 +70,9 @@ const App = () => {
   return (
     <div className="App">
 
-      <Header count={cards.length} />
+      <Header
+        count={cards.length}
+        totalCorrect={totalCorrect} />
 
       <Card
         card={cards[cardNumber]}
