@@ -1,12 +1,6 @@
 import React from "react";
-import { useState } from "react";
 
-const Card = (props) => {
-
-    // props from parent
-    const card = props.card;
-
-    const [toggledCard, setToggledCard] = useState(false);
+const Card = ({ card, toggledCard, setToggledCard }) => {
 
     const handleToggle = () => {
         setToggledCard((toggle) => !toggle);
@@ -17,7 +11,7 @@ const Card = (props) => {
             {!toggledCard ?
                 <div className={"front"}>
                     <h3>{card.front}</h3>
-                    <img src={card.url} alt="img" width="150px" height="100px"  />
+                    <img src={card.url} alt="img" width="150px" height="100px" />
                     <br />
                 </div> :
 

@@ -132,3 +132,11 @@ h2 {
 .incorrect {
   border: 3px solid red;
 }
+
+.button-container {
+  margin-top: 20px;
+}
+
+.previousCard .nextCard {
+  padding-left: 10px;
+}
