@@ -132,14 +132,10 @@ function App() {
           &no_ads={inputs.no_ads}
           <br></br>
         </p>
-        {quota ? (
-          <p>
-            {" "}
-            Remaining API calls: {quota.remaining} out of {quota.limit}
-          </p>
-        ) : (
-          <p>API Call status: Will appear once you send a request</p>
-        )}
+        {quota
+          ? (<p>Remaining API calls: {quota.remaining} out of {quota.limit}</p>)
+          : (<p>API Call status: Will appear once you send a request</p>)
+        }
       </div>
 
       <div className='container'>
