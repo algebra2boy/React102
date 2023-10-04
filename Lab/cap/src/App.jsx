@@ -1,11 +1,18 @@
+// const ACCESS_KEY = import.meta.env.ACCESS_KEY;
 import './App.css';
 import APIForm from './components/APIForm';
+import Gallery from './components/Gallery';
+
 import { useState } from 'react';
-const ACCESS_KEY = import.meta.env.VITE_APP_ACCESS_KEY;
+
+
+const ACCESS_KEY = "004e62ae8c6943f99f09d76652001f98"
 
 function App() {
 
   const [currentImage, setCurrentImage] = useState(null);
+  const [prevImages, setPrevImages] = useState([]);
+  const [quota, setQuota] = useState(null);
 
   const [inputs, setInputs] = useState({
     url: "",
@@ -57,7 +64,9 @@ function App() {
     }
     else {
       setCurrentImage(json.url);
+      setPrevImages((images) => [...images, json.url]);
       reset();
+      getQuota();
     }
   }
 
@@ -70,6 +79,13 @@ function App() {
       width: "",
       height: ""
     });
+  }
+
+  const getQuota = async () => {
+    const response = await fetch("https://api.apiflash.com/v1/urltoimage/quota?access_key=" + ACCESS_KEY);
+    const result = await response.json();
+    setQuota(result);
+    console.log(result);
   }
 
   return (
@@ -87,6 +103,50 @@ function App() {
         onSubmit={submitForm}
       />
       <br />
+      {currentImage ? (
+        <img
+          className="screenshot"
+          src={currentImage}
+          alt="Screenshot returned"
+        />
+      ) : (
+        <div>
+
+        </div>
+      )}
+
+      <div className="container">
+        <h3> Current Query Status: </h3>
+        <p>
+          {ACCESS_KEY}
+          https://api.apiflash.com/v1/urltoimage?access_key=ACCESS_KEY
+          <br></br>
+          &url={inputs.url} <br></br>
+          &format={inputs.format} <br></br>
+          &width={inputs.width}
+          <br></br>
+          &height={inputs.height}
+          <br></br>
+          &no_cookie_banners={inputs.no_cookie_banners}
+          <br></br>
+          &no_ads={inputs.no_ads}
+          <br></br>
+        </p>
+        {quota ? (
+          <p>
+            {" "}
+            Remaining API calls: {quota.remaining} out of {quota.limit}
+          </p>
+        ) : (
+          <p>API Call status: Will appear once you send a request</p>
+        )}
+      </div>
+
+      <div className='container'>
+        <Gallery images={prevImages}></Gallery>
+      </div>
+
+      <br></br>
     </div>
   )
 }
