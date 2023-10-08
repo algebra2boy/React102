@@ -2,11 +2,13 @@ import { useState } from 'react'
 import './App.css'
 import CatDisplay from './components/CatDisplay';
 import BanListContainer from './components/BanListContainer';
+import LeftSideListContainer from './components/LeftSideListContainer';
 
 function App() {
 
   const [currentCat, setCurrentCat] = useState(null);
   const [banAttributeList, setBanAttributeList] = useState([]);
+  const [previoutCatHistory, setPrevioutCatHistory] = useState([]);
 
   const callAPI = async () => {
     const API_Link = "https://api.thecatapi.com/v1/breeds";
@@ -18,6 +20,7 @@ function App() {
     checkIfBanAttributeExisted(random_cat);
     await requestCatImage(random_cat);
     filterCatData(random_cat);
+    setPrevioutCatHistory((prev) => [...prev, { url: random_cat["url"], name: random_cat["name"] }])
   }
 
   const requestCatImage = async (catData) => {
@@ -70,9 +73,9 @@ function App() {
         removeBanAttributeHandler={removeBanAttributeHandler}
       />
 
-      <div className='leftSide nav'>
-        <h2>Which cat have we seen</h2>
-      </div>
+      <LeftSideListContainer
+        catHistory={previoutCatHistory}
+      />
 
     </div>
   )
