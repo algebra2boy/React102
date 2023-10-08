@@ -8,23 +8,41 @@ function App() {
   const [currentCat, setCurrentCat] = useState(null);
   const [banAttributeList, setBanAttributeList] = useState([]);
 
-  const handleSubmit = async () => {
+  const callAPI = async () => {
     const API_Link = "https://api.thecatapi.com/v1/breeds";
     const response = await fetch(API_Link);
     const cat_data = await response.json();
     const random_cat_index = Math.floor(Math.random() * cat_data.length);
-    const random_cat = cat_data[random_cat_index];
-    await requestCatImage(random_cat["reference_image_id"]);
+    const random_cat = extractCatAttributes(cat_data[random_cat_index]);
+
+    checkIfBanAttributeExisted(random_cat);
+    await requestCatImage(random_cat);
     filterCatData(random_cat);
   }
 
-  const requestCatImage = async (id) => {
+  const requestCatImage = async (catData) => {
+    const id = catData["reference_image_id"];
     const API_Link = `https://api.thecatapi.com/v1/images/${id}`;
     const response = await fetch(API_Link);
     const data = await response.json();
     setCurrentCat({ "url": data["url"] });
   }
 
+  const extractCatAttributes = (catData) => {
+    const { name, life_span, origin, weight, affection_level, reference_image_id } = catData;
+    return { name, life_span, origin, weight, affection_level, reference_image_id };
+  }
+
+  // to prevent further images/API results with that attribute from being displayed
+  const checkIfBanAttributeExisted = (catInfo) => {
+    for (const [key, value] of Object.entries(catInfo)) {
+      if (banAttributeList.includes(String(value))) {
+        delete catInfo[key];
+      }
+    }
+  }
+
+  // add additional information to the catdata
   const filterCatData = (cat) => {
     setCurrentCat((prev) => ({
       ...prev,
@@ -42,7 +60,7 @@ function App() {
   return (
     <div className='App'>
       <CatDisplay
-        onSubmit={handleSubmit}
+        onSubmit={callAPI}
         catInfo={currentCat}
         clickHandler={banAttributeHandler}
       />
