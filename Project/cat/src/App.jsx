@@ -1,11 +1,12 @@
 import { useState } from 'react'
 import './App.css'
 import CatDisplay from './components/CatDisplay';
+import BanListContainer from './components/BanListContainer';
 
 function App() {
 
   const [currentCat, setCurrentCat] = useState(null);
-
+  const [banAttributeList, setBanAttributeList] = useState([]);
 
   const handleSubmit = async () => {
     const API_Link = "https://api.thecatapi.com/v1/breeds";
@@ -35,17 +36,21 @@ function App() {
     }));
   }
 
+  const banAttributeHandler = (e) => setBanAttributeList((prev) => [...prev, e.target.value]);
+  const removeBanAttributeHandler = (e) => setBanAttributeList((prev) => prev.filter(attribute => attribute !== e.target.value));
+
   return (
     <div className='App'>
       <CatDisplay
         onSubmit={handleSubmit}
         catInfo={currentCat}
+        clickHandler={banAttributeHandler}
       />
 
-      <div className='rightSide nav'>
-        <h2>Ban List</h2>
-        <h4>Selcet an attributes in your listing to ban it</h4>
-      </div>
+      <BanListContainer
+        banAttributeList={banAttributeList}
+        removeBanAttributeHandler={removeBanAttributeHandler}
+      />
 
       <div className='leftSide nav'>
         <h2>Which cat have we seen</h2>
@@ -55,4 +60,4 @@ function App() {
   )
 }
 
-export default App
+export default App;

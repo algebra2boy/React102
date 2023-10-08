@@ -1,7 +1,7 @@
 import React from "react"
 import Attributes from "./Attributes";
 
-const CatDisplay = ({ catInfo, onSubmit }) => {
+const CatDisplay = ({ catInfo, onSubmit, clickHandler }) => {
     return (
         <div className='whole-page'>
             <h1> Are you a cat lover?</h1>
@@ -14,6 +14,7 @@ const CatDisplay = ({ catInfo, onSubmit }) => {
                         <div className="attributes-container">
                             <h2>{catInfo.name}</h2>
                             <Attributes
+                                clickHandler={clickHandler}
                                 catInfo={catInfo}
                             />
                         </div>
