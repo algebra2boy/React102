@@ -20,7 +20,6 @@ function App() {
     checkIfBanAttributeExisted(random_cat);
     await requestCatImage(random_cat);
     filterCatData(random_cat);
-    setPrevioutCatHistory((prev) => [...prev, { url: random_cat["url"], name: random_cat["name"] }])
   }
 
   const requestCatImage = async (catData) => {
@@ -29,6 +28,7 @@ function App() {
     const response = await fetch(API_Link);
     const data = await response.json();
     setCurrentCat({ "url": data["url"] });
+    setPrevioutCatHistory((prev) => [...prev, { url: data["url"], name: catData["name"] }]);
   }
 
   const extractCatAttributes = (catData) => {
