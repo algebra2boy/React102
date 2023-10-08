@@ -4,7 +4,7 @@ import './App.css'
 function App() {
 
   return (
-    <>
+    <div className='App'>
 
       <div className='whole-page'>
         <h1> Are you a cat lover?</h1>
@@ -22,7 +22,7 @@ function App() {
           <h2>Which cat have we seen</h2>
       </div>
 
-    </>
+    </div>
   )
 }
 
