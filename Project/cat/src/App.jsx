@@ -1,17 +1,46 @@
 import { useState } from 'react'
 import './App.css'
+import CatDisplay from './components/CatDisplay';
 
 function App() {
 
+  const [currentCat, setCurrentCat] = useState({});
+
+
+  const handleSubmit = async () => {
+    const API_Link = "https://api.thecatapi.com/v1/breeds";
+    const response = await fetch(API_Link);
+    const cat_data = await response.json();
+    const random_cat_index = Math.floor(Math.random() * cat_data.length);
+    const random_cat = cat_data[random_cat_index];
+    await requestCatImage(random_cat["reference_image_id"]);
+    filterCatData(random_cat);
+  }
+
+  const requestCatImage = async (id) => {
+    const API_Link = `https://api.thecatapi.com/v1/images/${id}`;
+    const response = await fetch(API_Link);
+    const data = await response.json();
+    setCurrentCat({ "url": data["url"] });
+  }
+
+  const filterCatData = (cat) => {
+    setCurrentCat((prev) => ({
+      ...prev,
+      "name": cat["name"],
+      "life-span": cat["life_span"] + " years",
+      "origin": cat["origin"],
+      "weight": cat["weight"]["imperial"] + " lbs",
+      "affection_level": cat["affection_level"],
+    }));
+  }
+
   return (
     <div className='App'>
-
-      <div className='whole-page'>
-        <h1> Are you a cat lover?</h1>
-        <h2> Discover cats from the Internet!</h2>
-        <br />
-        <br />
-      </div>
+      <CatDisplay
+        onSubmit={handleSubmit}
+        catInfo={currentCat}
+      />
 
       <div className='rightSide nav'>
         <h2>Ban List</h2>
@@ -19,7 +48,7 @@ function App() {
       </div>
 
       <div className='leftSide nav'>
-          <h2>Which cat have we seen</h2>
+        <h2>Which cat have we seen</h2>
       </div>
 
     </div>

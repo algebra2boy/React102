@@ -1,8 +1,8 @@
-# Web Development Project 4 - _Name of App Here_
+# Web Development Project 4 - Cat The Lover
 
-Submitted by: **Your Name Here**
+Submitted by: Yongye Tan
 
-This web app: **insert description**
+This web app: This website is for anyone who enjoys and has a cat.
 
 Time spent: **X** hours spent in total
 
@@ -10,7 +10,7 @@ Time spent: **X** hours spent in total
 
 The following **required** functionality is completed:
 
-- [ ] **Clicking a button creates a new API fetch request and displays at least three attributes from the returned JSON data**
+- [x] **Clicking a button creates a new API fetch request and displays at least three attributes from the returned JSON data**
 - [ ] **Only one item/API call is viewable at a time**
 - [ ] **API calls appear random to the user**
 - [ ] **At least one image is displayed per API call**
