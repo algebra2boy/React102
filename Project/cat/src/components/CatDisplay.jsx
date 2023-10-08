@@ -19,6 +19,7 @@ const CatDisplay = ({ catInfo, onSubmit }) => {
                         </div>
                         <img
                             src={catInfo.url}
+                            className="cat-image"
                             alt="random cat image from internet"
                             height="250px"
                             width="250px" />
