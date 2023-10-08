@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import './App.css'
+import { useState } from 'react';
+import './App.css';
 import CatDisplay from './components/CatDisplay';
 import BanListContainer from './components/BanListContainer';
 import LeftSideListContainer from './components/LeftSideListContainer';
