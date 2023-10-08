@@ -8,13 +8,13 @@ const Attributes = ({ catInfo, clickHandler }) => {
         <div className="attributes">
             {catInfo &&
                 attributes.map((attribute) =>
-                    <AttributeButton 
-                    // have to add a key in a map otherwise a warning
-                    // list should have a unique "key" prop
-                    clickHandler={clickHandler}
-                    key={attribute}
-                    name={attribute}
-                    value={catInfo[attribute]} />
+                    <AttributeButton
+                        // have to add a key in a map otherwise a warning
+                        // list should have a unique "key" prop
+                        clickHandler={clickHandler}
+                        key={attribute}
+                        name={attribute}
+                        value={catInfo[attribute]} />
                 )
             }
         </div>
