@@ -4,7 +4,7 @@ import CatDisplay from './components/CatDisplay';
 
 function App() {
 
-  const [currentCat, setCurrentCat] = useState({});
+  const [currentCat, setCurrentCat] = useState(null);
 
 
   const handleSubmit = async () => {

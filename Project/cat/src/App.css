@@ -78,3 +78,16 @@
   top: 0;
   left: 0;
 }
+
+.attribute-buttons {
+  margin: 0 2px;
+  background-color: #7b663bf0;
+  box-shadow: 0 3px #7e4b0d;
+}
+
+.attributes {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
