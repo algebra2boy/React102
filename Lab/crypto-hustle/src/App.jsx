@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import './App.css'
-import CoinInfo from '../Components/coinInfo';
+import CoinInfo from './Components/coinInfo';
 
 const API_KEY = import.meta.env.VITE_APP_API_KEY;
 
@@ -18,6 +18,7 @@ function App() {
       const response = await fetch(APIURL);
       const data = await response.json();
       setList(data);
+      console.log(data);
     };
     fetchAllCoinData().catch(console.error);
   }, []);
@@ -34,6 +35,7 @@ function App() {
           .includes(searchValue.toLowerCase())
       )
       setFilteredResults(filteredData);
+      console.log(filteredData);
     } else {
       setFilteredResults(Object.keys(list.Data));
     }
@@ -52,10 +54,12 @@ function App() {
         />
 
         {searchInput.length > 0
-          ? filteredResults.map((coin) =>
+          ? filteredResults.map((coin, index) =>
             list.Data[coin].PlatformType === "blockchain"
               ? (
+                // very important to put key as a prop to identify unique component
                 <CoinInfo
+                  key={index}
                   image={list.Data[coin].ImageUrl}
                   name={list.Data[coin].FullName}
                   symbol={list.Data[coin].Symbol}
@@ -63,10 +67,11 @@ function App() {
 
               : null
           )
-          : list && Object.entries(list.Data).map(([coin]) =>
+          : list && Object.entries(list.Data).map(([coin], index) =>
             list.Data[coin].PlatformType === "blockchain"
               ? (
                 <CoinInfo
+                  key={index}
                   image={list.Data[coin].ImageUrl}
                   name={list.Data[coin].FullName}
                   symbol={list.Data[coin].Symbol}

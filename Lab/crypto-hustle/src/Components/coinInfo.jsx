@@ -20,7 +20,7 @@ const CoinInfo = ({ image, name, symbol }) => {
         <div>
             {price
                 ? (
-                    <li className="main-list" key={`${name}-${symbol}`}>
+                    <li className="main-list">
                         <img
                             className="icons"
                             src={`https://www.cryptocompare.com${image}`}
