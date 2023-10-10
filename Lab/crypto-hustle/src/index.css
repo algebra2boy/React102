@@ -67,3 +67,38 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+
+body {
+  background: black;
+}
+
+.icons {
+  padding-right: 10px;
+  width: 30px;
+  height: 30px;
+}
+
+ul {
+  list-style: none;
+  margin: 25px 50px 75px 30px;
+}
+
+li.main-list {
+  padding: 25px;
+  border-bottom: solid 3px white;
+  font-size: large;
+  padding-left: 0
+}
+
+.whole-page {
+  padding: 50px;;
+  text-align: center;
+  background: black;
+  color: white;
+}
+
+.tab {
+  display: inline-block;
+  margin-left: 20px;
+}
