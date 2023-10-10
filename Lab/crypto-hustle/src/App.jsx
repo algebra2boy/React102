@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import './App.css'
+import CoinInfo from '../Components/coinInfo';
 
 const API_KEY = import.meta.env.VITE_APP_API_KEY;
 
@@ -24,16 +25,18 @@ function App() {
       <div className='whole-page'>
         <h1>My Crypto List</h1>
 
-        {list && JSON.stringify(Object.entries(list.Data))}
-
-        {/* {list && Object.entries(list.Data).map(([coin]) =>
+        {/* each data is an object, we have to deconstruct the coin object using [] */}
+        {list && Object.entries(list.Data).map(([coin]) =>
           list.Data[coin].PlatformType === "blockchain"
             ? (
-              <li key={list.Data[coin].FullName}>
-                {list.Data[coin].FullName}
-              </li>)
+              <CoinInfo
+                image={list.Data[coin].ImageUrl}
+                name={list.Data[coin].FullName}
+                symbol={list.Data[coin].Symbol}
+              />)
+
             : null
-        )} */}
+        )}
 
       </div>
     </div>
