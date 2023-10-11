@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 import CoinInfo from './Components/coinInfo';
+import SideNav from "./Components/SideNav";
+
 
 const API_KEY = import.meta.env.VITE_APP_API_KEY;
 
@@ -18,7 +20,6 @@ function App() {
       const response = await fetch(APIURL);
       const data = await response.json();
       setList(data);
-      console.log(data);
     };
     fetchAllCoinData().catch(console.error);
   }, []);
@@ -26,7 +27,6 @@ function App() {
   // use it to filter through the results of our API call
   const searchItems = (searchValue) => {
     setSearchInputs(searchValue);
-
     if (searchValue !== "") {
       const filteredData = Object.keys(list.Data).filter((item) =>
         Object.values(item)
@@ -80,9 +80,10 @@ function App() {
               : null
           )
         }
-
       </div>
+      <SideNav />
     </div>
+    
   )
 }
 
