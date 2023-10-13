@@ -4,7 +4,7 @@ Submitted by: Yongye Tan
 
 This web app: This web app helps you learn more about different breweries in the U.S..
 
-Time spent: **X** hours spent in total
+Time spent: 4-5 hours spent in total
 
 ## Required Features
 
@@ -16,14 +16,13 @@ The following **required** functionality is completed:
   - [x] The state with the most brew
   - [x] The most brew type
   - [x] The total number of brew
-- [ ] **A search bar allows the user to search for an item in the fetched data**
-- [ ] **Multiple different filters (2+) allow the user to filter items in the database by specified categories**
+- [x] **A search bar allows the user to search for an item in the fetched data**
+- [x] **Multiple different filters (2+) allow the user to filter items in the database by specified categories**
 
 The following **optional** features are implemented:
 
-- [ ] Multiple filters can be applied simultaneously
-- [ ] Filters use different input types such as a text input, a selection, or a slider
-- [ ] The user can enter specific bounds for filter values
+- [x] Multiple filters can be applied simultaneously
+- [x] Filters use different input types such as a text input, a selection, or a slider
 
 The following **additional** features are implemented:
 
@@ -36,6 +35,9 @@ Here's a walkthrough of implemented user stories:
 ## Notes
 
 Describe any challenges encountered while building the app.
+
+The hardest part of this project is to manage state and passing the correct props to the correct components.
+There are many dynamic parts in this web app that must be carefully handled. 
 
 ## License
 

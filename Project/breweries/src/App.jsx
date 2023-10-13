@@ -9,6 +9,7 @@ function App() {
   const [breweries, setBreweries] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredBreweries, setFilteredBreweries] = useState([]);
+  const [brewType, setBrewType] = useState("micro"); // default type
 
   useEffect(() => {
     const fetchAllBrewData = async () => {
@@ -22,17 +23,25 @@ function App() {
 
   const handleSearchTerm = (e) => setSearchTerm(e.target.value);
   const handleSubmit = () => {
-    const searchCondition = (brew) => 
-      brew["state"].toLowerCase().includes(searchTerm.toLowerCase())|| 
+    const searchLocationCondition = (brew) =>
+      brew["state"].toLowerCase().includes(searchTerm.toLowerCase()) ||
       brew["city"].toLowerCase().includes(searchTerm.toLowerCase());
-    const filteredResults = breweries.filter(searchCondition);
+
+    const searchBrewType = (brew) => brew.brewery_type === brewType;
+    const search = (brew) => searchTerm.length === 0
+      ? searchBrewType(brew)
+      : searchBrewType(brew) && searchLocationCondition(brew);
+    const filteredResults = breweries.filter(search)
     setFilteredBreweries(filteredResults);
   };
-  const handleClear = () => setSearchTerm("");
+  const handleClear = () => { 
+    setFilteredBreweries([]);
+    setSearchTerm("")
+  };
+  const handleBrewType = (e) => setBrewType(e.target.value);
 
   return (
     <div className='app'>
-
       <div className='sidebar'>
         <Header />
         <NavBar />
@@ -48,7 +57,9 @@ function App() {
             searchTerm={searchTerm}
             handleSearchTerm={handleSearchTerm}
             handleSubmit={handleSubmit}
-            handleClear={handleClear} />
+            handleClear={handleClear}
+            brewType={brewType}
+            handleBrewType={handleBrewType} />
         </div>
       </div>
 
