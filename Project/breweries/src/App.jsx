@@ -28,6 +28,7 @@ function App() {
     const filteredResults = breweries.filter(searchCondition);
     setFilteredBreweries(filteredResults);
   };
+  const handleClear = () => setSearchTerm("");
 
   return (
     <div className='app'>
@@ -44,8 +45,10 @@ function App() {
         <div className='app-row'>
           <List
             breweries={filteredBreweries.length > 0 ? filteredBreweries : breweries}
+            searchTerm={searchTerm}
             handleSearchTerm={handleSearchTerm}
-            handleSubmit={handleSubmit} />
+            handleSubmit={handleSubmit}
+            handleClear={handleClear} />
         </div>
       </div>
 

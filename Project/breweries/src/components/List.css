@@ -5,12 +5,15 @@
 }
 
 table {
+    /* table-layout: fixed; */
+    width: 100%;
     border-spacing: 5px;
     margin-left: 20px;
     text-align: center;
 }
 
 th {
+    width: 100px;
     margin-right: 20px;
     padding-bottom: 10px;
     text-align: center;
@@ -18,5 +21,6 @@ th {
 }
 
 td {
+    width: 140px;
     white-space: nowrap;
 }

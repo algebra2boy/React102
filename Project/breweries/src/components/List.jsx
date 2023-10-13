@@ -2,10 +2,14 @@ import React from "react";
 import "./List.css";
 import SearchBar from "./SearchBar";
 
-const List = ({ breweries, handleSearchTerm, handleSubmit }) => {
+const List = ({ breweries, searchTerm, handleSearchTerm, handleSubmit, handleClear }) => {
     return (
         <div className="List">
-            <SearchBar handleSearchTerm={handleSearchTerm} handleSubmit={handleSubmit}/>
+            <SearchBar
+                searchTerm={searchTerm}
+                handleSearchTerm={handleSearchTerm}
+                handleSubmit={handleSubmit}
+                handleClear={handleClear} />
             <div className="table">
                 <table>
                     <thead>
