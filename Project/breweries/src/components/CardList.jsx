@@ -20,17 +20,17 @@ const CardList = ({ breweries }) => {
     return (
         <div className="CardList">
             <div className="Card">
-                <h2>The state with most brew</h2>
+                <h2 className="card-title">The state with most brew</h2>
                 <h3>{findTheMostState()}</h3>
             </div>
 
             <div className="Card">
-                <h2>The most brew type</h2>
+                <h2 className="card-title">The most brew type</h2>
                 <h3>{findTheMostBrewType()}</h3>
             </div>
 
             <div className="Card">
-                <h2>Total number of brew</h2>
+                <h2 className="card-title">Total number of brew</h2>
                 <h3>{countBrew()}</h3>
             </div>
         </div>

@@ -4,9 +4,14 @@
     margin-left: 20px;
     margin-bottom: 50px;
     width: 300px;
+    border-radius: 20px;
 }
 
 .CardList {
     display: flex;
     flex-direction: row;
+}
+
+.card-title {
+    color: black;
 }

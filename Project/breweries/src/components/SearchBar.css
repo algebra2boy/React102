@@ -1,0 +1,12 @@
+.searchBar-button {
+    margin-left: 30px;
+    width: fit-content;
+}
+
+.searchBar-textfield {
+    height: 20px;
+}
+
+.searchbar {
+    position: relative;
+}

@@ -1,9 +1,11 @@
 import React from "react";
-import "./List.css"
+import "./List.css";
+import SearchBar from "./SearchBar";
 
-const List = ({ breweries }) => {
+const List = ({ breweries, handleSearchTerm, handleSubmit }) => {
     return (
         <div className="List">
+            <SearchBar handleSearchTerm={handleSearchTerm} handleSubmit={handleSubmit}/>
             <div className="table">
                 <table>
                     <thead>

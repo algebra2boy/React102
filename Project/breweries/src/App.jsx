@@ -7,6 +7,8 @@ import './App.css';
 
 function App() {
   const [breweries, setBreweries] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [filteredBreweries, setFilteredBreweries] = useState([]);
 
   useEffect(() => {
     const fetchAllBrewData = async () => {
@@ -14,10 +16,18 @@ function App() {
       const response = await fetch(APIURL);
       const data = await response.json();
       setBreweries(data);
-      setIsLoading(false);
     };
     fetchAllBrewData().catch(console.error);
   }, []);
+
+  const handleSearchTerm = (e) => setSearchTerm(e.target.value);
+  const handleSubmit = () => {
+    const searchCondition = (brew) => 
+      brew["state"].toLowerCase().includes(searchTerm.toLowerCase())|| 
+      brew["city"].toLowerCase().includes(searchTerm.toLowerCase());
+    const filteredResults = breweries.filter(searchCondition);
+    setFilteredBreweries(filteredResults);
+  };
 
   return (
     <div className='app'>
@@ -29,12 +39,13 @@ function App() {
 
       <div className='app-page'>
         <div className='app-row'>
-          <CardList
-            breweries={breweries}
-          />
+          <CardList breweries={breweries} />
         </div>
         <div className='app-row'>
-          <List breweries={breweries} />
+          <List
+            breweries={filteredBreweries.length > 0 ? filteredBreweries : breweries}
+            handleSearchTerm={handleSearchTerm}
+            handleSubmit={handleSubmit} />
         </div>
       </div>
 
