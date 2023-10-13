@@ -29,7 +29,7 @@ const List = ({ breweries, searchTerm, handleSearchTerm, handleSubmit, handleCle
                         {breweries && breweries.length > 0 &&
                             breweries.map((brew, index) => (
                                 <tr key={index}>
-                                    <td>{brew.name}</td>
+                                    <td><a href={brew.website_url}>{brew.name}</a></td>
                                     <td>{brew.city}</td>
                                     <td>{brew.state}</td>
                                     <td>{brew.phone ? brew.phone : "N/A"}</td>

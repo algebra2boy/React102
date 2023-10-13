@@ -24,3 +24,7 @@ td {
     width: 140px;
     white-space: nowrap;
 }
+
+a {
+    justify-content: center;
+}
