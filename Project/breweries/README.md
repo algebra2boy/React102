@@ -32,6 +32,9 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
+https://github.com/algebra2boy/React102/assets/103079472/750318cf-bf2b-4310-ad6d-789ea46cac21
+
+
 ## Notes
 
 Describe any challenges encountered while building the app.
