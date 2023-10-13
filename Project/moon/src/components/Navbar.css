@@ -1,28 +1,15 @@
-ul {
-    list-style: none;
-}
-  
-li {
-    font-size: large;
-    padding-left: 0
-}
-
-.navBar {
+a {
+    align-items: center;
     display: flex;
     flex-direction: row;
+    position: relative;
+    color: #fff;
+    text-decoration: none;
 }
 
-.icon {
-    display: flex;
-    width: 30px;
-    height: 30px;
-    padding-top: 30px;
-}
-
-.title {
-    display: block;
-    padding-left: 10px;
+.navbar-option {
+    list-style: none;
+    margin: 0;
+    padding-bottom: 20px;
     font-size: 2em;
-    font-weight: bold;
-    color: white;
 }

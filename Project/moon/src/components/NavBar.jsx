@@ -14,8 +14,9 @@ const NavBar = () => {
             <ul>
                 {navBarOption && Object.keys(navBarOption).map((nav) => (
                     <li className="navbar-option" key={nav}>
-                        <span className="icon">{navBarOption[nav]}</span>
-                        <h4 className="title">{nav}</h4>
+                        <a href="/" className="navbar-link">
+                            <div>{navBarOption[nav]} {nav}</div>
+                        </a>
                     </li>
                 ))}
             </ul>
