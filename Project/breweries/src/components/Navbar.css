@@ -13,3 +13,8 @@ a {
     padding-bottom: 20px;
     font-size: 2em;
 }
+
+.navBar ul {
+    margin: 0;
+    padding: 0;
+}
