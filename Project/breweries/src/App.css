@@ -54,3 +54,9 @@
 .app-page {
   padding-left: 200px;
 }
+
+.app-row {
+  align-items: center;
+  gap: 10px 20px;
+  padding-right: 30px;
+}

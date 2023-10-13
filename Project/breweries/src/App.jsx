@@ -2,11 +2,11 @@ import { useState, useEffect } from 'react';
 import Header from './components/Header';
 import NavBar from './components/NavBar';
 import List from './components/List';
+import CardList from './components/CardList';
 import './App.css';
 
 function App() {
   const [breweries, setBreweries] = useState([]);
-
 
   useEffect(() => {
     const fetchAllBrewData = async () => {
@@ -14,21 +14,30 @@ function App() {
       const response = await fetch(APIURL);
       const data = await response.json();
       setBreweries(data);
+      setIsLoading(false);
     };
     fetchAllBrewData().catch(console.error);
   }, []);
 
   return (
     <div className='app'>
+
       <div className='sidebar'>
         <Header />
-        <NavBar/>
+        <NavBar />
       </div>
+
       <div className='app-page'>
         <div className='app-row'>
-          <List breweries={breweries}/>
-        </div> 
+          <CardList
+            breweries={breweries}
+          />
+        </div>
+        <div className='app-row'>
+          <List breweries={breweries} />
+        </div>
       </div>
+
     </div>
   )
 }
