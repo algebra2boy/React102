@@ -50,3 +50,7 @@
   position: fixed;
   background-color: hsla(0,0%,100%,.1);
 }
+
+.app-page {
+  padding-left: 200px;
+}

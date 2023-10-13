@@ -1,0 +1,22 @@
+.List {
+    background-color: hsla(0,0%,100%,.092);
+    box-shadow: 0 15px 25px hsla(0,2%,50%,.154);
+    padding: 20px 20px 40px;
+}
+
+table {
+    border-spacing: 15px;
+    margin-left: 20px;
+    text-align: center;
+}
+
+th {
+    margin-right: 20px;
+    padding-bottom: 10px;
+    text-align: center;
+    color: #fff;
+}
+
+td {
+    white-space: nowrap;
+}

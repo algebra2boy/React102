@@ -2,7 +2,7 @@
 .Header {
     display: flex;
     flex-direction: row;
-    padding-left: 40px;
+    padding-left: 35px;
 }
 
 .icon {
