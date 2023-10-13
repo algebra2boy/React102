@@ -7,7 +7,7 @@ const Header = () => {
         <div className="Header">
             <img
                 className="icon"
-                src="https://img.icons8.com/fluency/344/full-moon.png"
+                src="https://png.pngtree.com/png-clipart/20220125/original/pngtree-beer-png-image_7209170.png"
                 alt="moon logo" />
             <h3 className="title">AstroDash</h3>
         </div>
