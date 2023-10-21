@@ -1,7 +1,8 @@
 .List {
-    background-color: hsla(0,0%,100%,.092);
-    box-shadow: 0 15px 25px hsla(0,2%,50%,.154);
+    background-color: rgba(44, 37, 37, 0.1);;
+    box-shadow: 0 15px 25px rgba(44, 37, 37, 0.1);;
     padding: 20px 20px 40px;
+    font-size: small;
 }
 
 table {
@@ -17,7 +18,7 @@ th {
     margin-right: 20px;
     padding-bottom: 10px;
     text-align: center;
-    color: #fff;
+    color: black;
 }
 
 td {

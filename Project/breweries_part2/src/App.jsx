@@ -3,6 +3,7 @@ import Header from './components/Header';
 import NavBar from './components/NavBar';
 import List from './components/List';
 import CardList from './components/CardList';
+import MyBarChart from './components/MyBarChart';
 import './App.css';
 
 function App() {
@@ -51,6 +52,11 @@ function App() {
         <div className='app-row'>
           <CardList breweries={breweries} />
         </div>
+
+        <div className='app-row'>
+          <MyBarChart chartData={breweries}/>
+        </div>
+
         <div className='app-row'>
           <List
             breweries={filteredBreweries.length > 0 ? filteredBreweries : breweries}

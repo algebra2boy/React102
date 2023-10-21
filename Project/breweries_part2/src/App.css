@@ -48,7 +48,7 @@
   left: 0;
   overflow-x: hidden;
   position: fixed;
-  background-color: hsla(0,0%,100%,.1);
+  background-color: rgba(44, 37, 37, 0.1);
 }
 
 .app-page {

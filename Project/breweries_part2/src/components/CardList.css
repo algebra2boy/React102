@@ -1,6 +1,6 @@
 .Card {
     background-color: hsla(0,0%,100%,.1);
-    box-shadow: 0 15px 25px hsla(0,2%,50%,.2);
+    box-shadow: 0 15px 25px rgba(44, 37, 37, 0.1);;
     margin-left: 20px;
     margin-bottom: 50px;
     width: 300px;
