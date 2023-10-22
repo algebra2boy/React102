@@ -29,3 +29,7 @@ td {
 a {
     justify-content: center;
 }
+
+.detail {
+    cursor: pointer;
+}
