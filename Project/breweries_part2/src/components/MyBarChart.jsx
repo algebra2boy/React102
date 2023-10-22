@@ -8,8 +8,9 @@ import {
     BarChart,
     Legend,
 } from "recharts";
+import "./MyBarChart.css";
 
-const MyBarChart = ({ chartData }) => {
+const MyBarChart = ({ chartData, attribute }) => {
 
     const [goodData, setGoodData] = useState([]);
 
@@ -18,16 +19,15 @@ const MyBarChart = ({ chartData }) => {
     //     { name: 'Page A', uv: 4000 },
     //     { name: 'Page B', uv: 3000 },
     // ];
-
     const dataClean = (chartData) => {
         const category = {};
         /* [{ type: "micro", count: 20}, { type: "large", count: 20} ...] */
         // get the unique labels
-        const uniqueTypes = new Set(chartData.map(data => data.brewery_type));
+        const uniqueTypes = new Set(chartData.map(data => data[attribute]));
         uniqueTypes.forEach((type) => category[type] = { "type": type, "count": 0 });
 
         // iterate each label
-        chartData.forEach((data) => ++category[data.brewery_type]["count"]);
+        chartData.forEach((data) => ++category[data[attribute]]["count"]);
         return Object.values(category);
     }
 
@@ -39,8 +39,9 @@ const MyBarChart = ({ chartData }) => {
         <div className="chart-container">
             {goodData.length !== 0 ? (
                 <BarChart
-                    width={500}
-                    height={300}
+                    layout="vertical"
+                    width={400}
+                    height={400}
                     data={goodData}
                     margin={{
                         top: 5,
@@ -50,8 +51,8 @@ const MyBarChart = ({ chartData }) => {
                     }}
                 >
                     <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="type" />
-                    <YAxis />
+                    <XAxis type="number" />
+                    <YAxis dataKey="type" type="category" tick={{ fontSize: 10 }}/>
                     <Tooltip />
                     <Legend />
                     <Bar dataKey="count" fill="#82ca9d" />

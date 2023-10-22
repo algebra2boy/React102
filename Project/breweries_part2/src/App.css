@@ -60,3 +60,8 @@
   gap: 10px 20px;
   padding-right: 30px;
 }
+
+.flex {
+  display: flex;
+  flex-direction: row;
+}

@@ -53,8 +53,9 @@ function App() {
           <CardList breweries={breweries} />
         </div>
 
-        <div className='app-row'>
-          <MyBarChart chartData={breweries}/>
+        <div className='app-row flex'>
+          <MyBarChart chartData={breweries} attribute={"brewery_type"}/>
+          <MyBarChart chartData={breweries} attribute={"state"}/>
         </div>
 
         <div className='app-row'>
