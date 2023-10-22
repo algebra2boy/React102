@@ -2,27 +2,27 @@
 
 Submitted by: Yongye Tan
 
-This web app: **insert description**
+This web app: This brew app adds more visualization and detail pages to the brew data.
 
-Time spent: **X** hours spent in total
+Time spent: **4** hours spent in total
 
 ## Required Features
 
 The following **required** functionality is completed:
 
 - [x] **The app includes at least one unique chart developed using the fetched data that tell an interesting story**
-- [ ] **Clicking on an item in the list view displays more details about it**
-- [ ] **Clicking on an item has a direct, unique link to that item's detail view page**
+- [x] **Clicking on an item in the list view displays more details about it**
+- [x] **Clicking on an item has a direct, unique link to that item's detail view page**
 
 
 The following **optional** features are implemented:
 
-- [ ] The site's customized dashboard contains more content that explains what is interesting about the data
-- [ ] The site allows users to toggle between different data visualizations
+- [x] The site's customized dashboard contains more contÍent that explains what is interesting about the data
+- [x] The site allows users to toggle between different data visualizations
 
 The following **additional** features are implemented:
 
-* [ ] List anything else that you added to improve the site's functionality!
+* [x] Add resuable navbar and home button to be displayed across different view
 
 ## Video Walkthrough
 
@@ -31,6 +31,10 @@ Here's a walkthrough of implemented user stories:
 ## Notes
 
 Describe any challenges encountered while building the app.
+
+The hardest part of making this app is to understand how to use Link, Route and pass state/props to other components through Link.
+Overall, I think this web app really helps me understand how to route to differnt view, maintain separation of concern, and make
+reusable components.
 
 ## License
 
