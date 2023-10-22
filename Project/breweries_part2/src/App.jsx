@@ -43,11 +43,7 @@ function App() {
 
   return (
     <div className='app'>
-      <div className='sidebar'>
-        <Header />
-        <NavBar />
-      </div>
-
+      
       <div className='app-page'>
         <div className='app-row'>
           <CardList breweries={breweries} />

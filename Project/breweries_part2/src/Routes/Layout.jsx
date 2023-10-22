@@ -1,5 +1,5 @@
 import { Outlet, Link } from "react-router-dom";
-
+import SideBar from "./SideBar";
 
 const Layout = () => {
     return (
@@ -13,8 +13,10 @@ const Layout = () => {
                     </li>
                 </ul>
             </nav>
+
             {/* bascially this is the APP and brew info element */}
             {/* render the child compoent */}
+            <SideBar />
             <Outlet />
         </div>
     );
