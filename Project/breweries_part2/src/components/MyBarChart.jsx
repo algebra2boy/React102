@@ -7,10 +7,11 @@ import {
     Bar,
     BarChart,
     Legend,
+    Label,
 } from "recharts";
 import "./MyBarChart.css";
 
-const MyBarChart = ({ chartData, attribute }) => {
+const MyBarChart = ({ chartData, attribute, yLabel, title }) => {
 
     const [goodData, setGoodData] = useState([]);
 
@@ -44,18 +45,23 @@ const MyBarChart = ({ chartData, attribute }) => {
                     height={400}
                     data={goodData}
                     margin={{
-                        top: 5,
+                        top: 30,
                         right: 20,
-                        left: 20,
-                        bottom: 5,
+                        left: 60,
+                        bottom: 30,
                     }}
                 >
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis type="number" />
-                    <YAxis dataKey="type" type="category" tick={{ fontSize: 10 }}/>
+                    <YAxis dataKey="type" type="category" tick={{ fontSize: 10 }} >
+                        <Label value={yLabel} angle={-90} position='left' style={{ textAnchor: 'middle' }} />
+                    </YAxis>
                     <Tooltip />
                     <Legend />
                     <Bar dataKey="count" fill="#82ca9d" />
+                    <text x={200} y={20} textAnchor="middle" style={{ fontSize: '15px' }}>
+                        {title}
+                    </text>
                 </BarChart>
             ) : null}
         </div>

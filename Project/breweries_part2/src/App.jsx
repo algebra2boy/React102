@@ -35,7 +35,7 @@ function App() {
     const filteredResults = breweries.filter(search)
     setFilteredBreweries(filteredResults);
   };
-  const handleClear = () => { 
+  const handleClear = () => {
     setFilteredBreweries([]);
     setSearchTerm("")
   };
@@ -43,15 +43,23 @@ function App() {
 
   return (
     <div className='app'>
-      
+
       <div className='app-page'>
         <div className='app-row'>
           <CardList breweries={breweries} />
         </div>
 
         <div className='app-row flex'>
-          <MyBarChart chartData={breweries} attribute={"brewery_type"}/>
-          <MyBarChart chartData={breweries} attribute={"state"}/>
+          <MyBarChart
+            chartData={breweries}
+            attribute={"brewery_type"}
+            yLabel={"Brewery Type"}
+            title={"distribution of brewery type"} />
+          <MyBarChart
+            chartData={breweries}
+            attribute={"state"}
+            yLabel={"State"}
+            title={"distribution of brewery in different state"} />
         </div>
 
         <div className='app-row'>
