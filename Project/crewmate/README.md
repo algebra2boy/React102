@@ -2,7 +2,7 @@
 
 Submitted by: Yongye Tan
 
-This web app: Playing amoung us could be fun, but have you made your own among us crewmate before?
+This web app: Playing among us could be fun, but have you made your own among us crewmate before?
 
 Time spent:  4 hours spent in total
 
