@@ -1,5 +1,3 @@
-
-https://github.com/algebra2boy/React102/assets/103079472/acd62daa-789c-4b86-b968-53d329d02efc
 # Web Development Project 7 - Crewmate
 
 Submitted by: Yongye Tan
@@ -29,8 +27,7 @@ The following **optional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-Uploading Screen Recording 2023-10-27 at 2.04.39 PM.mov…
-
+https://github.com/algebra2boy/React102/assets/103079472/b376ab92-62e6-47a6-b3e2-4ab1bc37c78b
 
 
 ## Notes
