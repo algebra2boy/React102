@@ -1,0 +1,20 @@
+a {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar-option {
+    list-style: none;
+    margin: 0;
+    padding-bottom: 20px;
+    font-size: 2em;
+}
+
+.navBar ul {
+    margin: 0;
+    padding: 0;
+}

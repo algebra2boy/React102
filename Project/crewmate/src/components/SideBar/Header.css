@@ -1,0 +1,21 @@
+/* this makes teh icon and title in one row */
+.Header {
+    display: flex;
+    flex-direction: row;
+    padding-left: 35px;
+}
+
+.icon {
+    display: flex;
+    width: 30px;
+    height: 30px;
+    padding-top: 30px;
+}
+
+.title {
+    display: block;
+    padding-left: 10px;
+    font-size: 2em;
+    font-weight: bold;
+    color: black;
+}
