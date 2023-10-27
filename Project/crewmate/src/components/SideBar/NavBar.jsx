@@ -1,12 +1,22 @@
 import React from "react";
 import "./Navbar.css";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
 
     const navBarOption = {
-        "Dashboard": "🏠",
-        "Create": "🏗️",
-        "Gallery": "📕",
+        "Dashboard": {
+            "icon": "🏠",
+            "link": "/"
+        },
+        "Create": {
+            "icon": "🏗️",
+            "link": "/create"
+        },
+        "Gallery": {
+            "icon": "📕",
+            "link": "/gallery"
+        },
     };
 
     return (
@@ -14,9 +24,9 @@ const NavBar = () => {
             <ul>
                 {navBarOption && Object.keys(navBarOption).map((nav) => (
                     <li className="navbar-option" key={nav}>
-                        <a href="/" className="navbar-link">
-                            <div>{navBarOption[nav]} {nav}</div>
-                        </a>
+                        <Link className="navbar-link" to={navBarOption[nav]["link"]}>
+                            <div>{navBarOption[nav]["icon"]} {nav}</div>
+                        </Link>
                     </li>
                 ))}
             </ul>
