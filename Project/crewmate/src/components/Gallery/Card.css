@@ -10,7 +10,7 @@
 
 span {
     border-radius: 5px;
-    background-color: rgb(153, 120, 161);
+    background-color: #ED7D31
 }
 
 #Red {
@@ -49,4 +49,15 @@ span {
         10px 4px 8px rgba(0, 0, 255, 0.2),
         10px 4px 8px rgba(75, 0, 130, 0.2),
         10px 4px 8px rgba(143, 0, 255, 0.2);
+}
+
+#link {
+    display: inline;
+    text-decoration: none;
+    color: white;
+}
+
+.button {
+    margin-bottom: 10px;
+    background-color: aliceblue;
 }

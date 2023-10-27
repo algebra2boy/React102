@@ -12,7 +12,7 @@ The following **required** functionality is completed:
 
 - [x] **A create form allows users to add new cremates**
 - [x] **Users can name the crewmate and set the crewmate's attributes by clicking on one of several values**
-- [ ] **The site displays a summary page of all the user's added crewmates**
+- [x] **The site displays a summary page of all the user's added crewmates**
 - [ ] **A previously created crewmate can be updated from the crewmate list**
 - [ ] **A previously created crewmate can be deleted from the crewmate list**
 - [ ] **Each crewmate has a direct, unique link to an info page about them**
