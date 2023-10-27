@@ -8,7 +8,9 @@ const Layout = () => {
 
             {/* bascially this is the APP and brew info element */}
             {/* render the child compoent */}
-            <Outlet />
+            <div className='whole-page'>
+                <Outlet />
+            </div>
         </div>
     );
 };
