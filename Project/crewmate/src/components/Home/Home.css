@@ -1,0 +1,14 @@
+.home-page {
+    margin-left: 400px;
+}
+
+.pictures {
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    padding-left: 100px;
+}
+
+.Home {
+    width: 800px;
+}

@@ -74,7 +74,9 @@ button:focus-visible {
   width: 250px;
   top: 0;
   left: 0;
-  overflow-x: hidden;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
   position: fixed;
   background-color: rgba(44, 37, 37, 0.1);
 }
