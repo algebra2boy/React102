@@ -5,8 +5,8 @@ const NavBar = () => {
 
     const navBarOption = {
         "Dashboard": "🏠",
-        "Search": "🔍",
-        "About": "📕",
+        "Create": "🏗️",
+        "Gallery": "📕",
     };
 
     return (
