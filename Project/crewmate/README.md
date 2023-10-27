@@ -2,9 +2,9 @@
 
 Submitted by: Yongye Tan
 
-This web app: Crewmate
+This web app: Playing amoung us could be fun, but have you made your own among us crewmate before?
 
-Time spent:  hours spent in total
+Time spent:  4 hours spent in total
 
 ## Required Features
 
@@ -32,6 +32,8 @@ Here's a walkthrough of implemented user stories:
 ## Notes
 
 Describe any challenges encountered while building the app.
+
+The hardest part of this project is to connect the supabase database and render them onto the screen.
 
 ## License
 
