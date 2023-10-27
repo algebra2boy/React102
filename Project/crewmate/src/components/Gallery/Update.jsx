@@ -2,10 +2,10 @@ import React from "react";
 import crewmates from "../../assets/crewmates.png"
 import { useLocation, useParams } from "react-router-dom";
 import "./Update.css"
+import UpdateContainer from "./UpdateContainer";
 
 const Update = () => {
 
-    const { id } = useParams();
     const data = useLocation().state.crewData;
 
     return (
@@ -15,6 +15,7 @@ const Update = () => {
             
             <h1>Current Crewmate Info:</h1>
             <h2>Name: {data.name}, Speed: {data.speed}, Color: {data.color}</h2>
+            <UpdateContainer id={data.id}/>
         </div>
     )
 };
