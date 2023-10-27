@@ -12,7 +12,10 @@ const Card = ({ crew }) => {
                 <h3>Speed of Crewmate: <span>{crew.speed}</span></h3>
                 <h3>Color of Crewmate: <span>{crew.color}</span></h3>
             </Link>
-            <button className="button">Edit Crewmate</button>
+
+            <Link to={`/update/${crew.id}`} state={{ "crewData": crew }} id="link">
+                <button className="button">Edit Crewmate</button>
+            </Link>
         </div >
     );
 };
