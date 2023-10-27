@@ -12,6 +12,12 @@ const Container = () => {
         "color": ""
     });
 
+    const clearState = () => setCrewmate({
+        "name": "",
+        "speed": "",
+        "color": ""
+    })
+
     const onClickHandler = async () => {
         try {
             await database
@@ -22,6 +28,7 @@ const Container = () => {
                     "color": crewmate.color
                 });
             alert("crew mate has been successfully created!");
+            clearState();
         } catch {
             alert("something went wrong")
         }
